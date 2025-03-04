@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .timer-container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .timer-circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin: 2rem auto;
+            background: conic-gradient(#2c3e50 0%, #ecf0f1 0%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .timer-inner {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timer {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .controls button {
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+
+        .controls button:hover {
+            transform: scale(1.05);
+        }
+
+        #start { background: #27ae60; }
+        #pause { background: #e67e22; }
+        #reset { background: #c0392b; }
+
+        .session-info {
+            margin-top: 2rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>⏳ Pomodoro Timer</h1>
+        <a href="../index.html" class="back-btn">Back to Home</a>
+    </header>
+    <div class="timer-container">
+        <div class="timer-circle">
+            <div class="timer-inner">
+                <div class="timer">25:00</div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="start">Start</button>
+            <button id="pause">Pause</button>
+            <button id="reset">Reset</button>
+        </div>
+        <div class="session-info">
+            <h3>Current Session</h3>
+            <p id="session-count">Focus Time: Session 1</p>
+        </div>
+    </div>
+    <script src="pomodoro.js"></script>
+</body>
+</html>

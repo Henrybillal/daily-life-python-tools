@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Speed Tester</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .speed-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .speed-card {
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 20px 20px 60px #d0d0d0, -20px -20px 60px #ffffff;
+            text-align: center;
+        }
+
+        .speed-display {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .speed-item {
+            padding: 2rem;
+            border-radius: 15px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .speed-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .speed-value {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent; /* Fallback for older browsers */
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #eee;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            transition: width 0.3s ease;
+        }
+
+        #startTest {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #startTest:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .status {
+            margin: 1rem 0;
+            color: #666;
+        }
+
+        @media (max-width: 600px) {
+            .speed-display {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚀 Internet Speed Test</h1>
+        <a href="../index.html" class="back-btn">Back to Home</a>
+    </header>
+    <div class="speed-container">
+        <div class="speed-card">
+            <button id="startTest">Start Speed Test</button>
+            <div class="status" id="status">Click to start the test</div>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="speed-display">
+                <div class="speed-item">
+                    <h3>Download Speed</h3>
+                    <div class="speed-value" id="downloadSpeed">0.00</div>
+                    <div>Mbps</div>
+                </div>
+                <div class="speed-item">
+                    <h3>Upload Speed</h3>
+                    <div class="speed-value" id="uploadSpeed">0.00</div>
+                    <div>Mbps</div>
+                </div>
+            </div>
+            <div id="details"></div>
+        </div>
+    </div>
+    <script src="speedtest.js"></script>
+</body>
+</html>

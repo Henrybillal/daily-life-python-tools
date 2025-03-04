@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to Text Extractor</title>
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Add this line before your pdfextractor.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <style>
+        .pdf-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .upload-area {
+            border: 2px dashed #2c3e50;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            transition: all 0.3s;
+        }
+
+        .upload-area.dragover {
+            background: #f0f2f5;
+            border-color: #3498db;
+        }
+
+        #output {
+            margin-top: 2rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            min-height: 200px;
+            max-height: 500px;
+            overflow-y: auto;
+            background: white;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        #copyBtn {
+            background: #27ae60;
+        }
+
+        #downloadBtn {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📖 PDF to Text Extractor</h1>
+        <a href="../index.html" class="back-btn">Back to Home</a>
+    </header>
+    <div class="pdf-container">
+        <div class="upload-area" id="dropZone">
+            <h2>Drop your PDF here</h2>
+            <p>or</p>
+            <input type="file" id="pdfInput" accept=".pdf" hidden>
+            <button id="selectFile">Select PDF File</button>
+        </div>
+        <div class="controls">
+            <button id="copyBtn">Copy Text</button>
+            <button id="downloadBtn">Download as TXT</button>
+        </div>
+        <div id="output"></div>
+    </div>
+    <script src="https://unpkg.com/pdf.js/build/pdf.js"></script>
+    <script src="pdfextractor.js"></script>
+</body>
+</html>
